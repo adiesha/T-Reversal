@@ -1,8 +1,15 @@
 import itertools
 import random
+import networkx as nx
+import matplotlib.pyplot as plt
 
 
 def main():
+    G = nx.Graph()
+    G.add_edge(1, 2)
+    print(G.has_edge(2,1))
+    nx.draw(G)
+    plt.show()
     perms = list(itertools.permutations("012345"))
 
     nOfperms = len(perms)
