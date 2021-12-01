@@ -59,6 +59,7 @@ class TranspositionGraph():
     def drawTwoGraphsOnSameThing(self, G1, G2, pos1, pos2, connectionstyle1="arc3,rad=0.4",
                                  connectionstyle2="arc3,rad=0.7", edge_color1='red', edge_color2='green'):
         G3 = nx.compose(G1, G2)
+        plt.figure(figsize=(12, 12))
         pos3 = pos1.update(pos2)
         nx.draw(G3, pos1, with_labels=True, nodelist=G1.nodes(), edgelist=G1.edges(), edge_color=edge_color1,
                 connectionstyle=connectionstyle1)
@@ -80,7 +81,7 @@ def test(s1, s2):
 
 def main():
     test("123432341214", "123434123214")
-    test("123213234144", "144132123234")
+    test("01232132341445", "01441321232345")
 
 
 if __name__ == '__main__':
